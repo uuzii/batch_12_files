@@ -1,0 +1,17 @@
+article div:first-child{
+    background-color: red;
+    width: auto;
+    margin: 0 auto;
+}
+
+nav .nav-wrapper {
+    background-color: #00B9D1;
+ }
+
+ footer.page-footer {
+     background-color: #00B9D1;
+ }
+
+ .row .col.offset-l2 {
+     margin-left: auto;
+ }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="myCtrl as mc">
+{{mc.name}}
+
+<h1 ng-repeat="person in mc.devf">
+    {{person.name}} : {{person.role}}
+</h1>
+
+<section ng-controller="otherCtrl as other">
+    <button ng-click="other.saludo()">Saludar</button>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

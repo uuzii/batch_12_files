@@ -1,0 +1,31 @@
+.controllerOne{
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+}
+.controllerTwo{
+    position: relative;
+    background: url("./app/assets/leia.jpg");
+    background-size: cover;
+    width: 50%;
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+
+.controllerThree{
+    position: relative;
+    background: url("./app/assets/luke.jpg") ;
+    background-size: cover;
+
+    width: 50%;
+    float: right;
+    height: 100%;
+    text-align: center;
+}
+.container{
+    position: absolute;
+    left: 25%;
+    top:50%;
+    text-align: center;
+}

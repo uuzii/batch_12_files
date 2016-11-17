@@ -1,0 +1,29 @@
+body{
+    padding-top: 60px;
+    background-color: rgb(57, 76, 95);
+}
+
+my-paper section{
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(201, 201, 201);
+}
+
+my-paper section nav div{
+    display: inline-block;
+    margin-left: 30px;
+}
+
+my-paper my-article article{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+
+ .row .col.offset-l2 {
+     margin-left: auto;
+ }
