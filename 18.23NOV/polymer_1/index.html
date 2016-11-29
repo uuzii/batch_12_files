@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Polymer</title>
+    <!-- Para importar el componente que jalamos -->
+    <link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html" media="screen" title="no title">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html" media="screen" title="no title">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html" media="screen" title="no title">
+    <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  </head>
+  <style media="screen">
+    paper-card{
+      /*height: 100px;*/
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+
+    <h1>Hola :)</h1>
+
+    <demo-element></demo-element>
+
+    <!-- Se debe llamar igual que el componente -->
+    <dom-module id="demo-element">
+      <template>
+        <!-- Con esto se hace el repeat de lo que agarre la url -->
+        <template id="paper" is="dom-repeat" items="{{response.results}}">
+          <paper-card heading="{{item.name}}">
+            <div class="card-content">{{item.id}}</div>
+            <div class="card-actions">{{item.id}}
+            </div>
+          </paper-card>
+        </template>
+        <!-- Forma de consumir API
+      Si require params se los pasamas aqui -->
+        <iron-ajax
+          auto
+          url="http://pokeapi.co/api/v2/pokemon"
+          handle-as="json"
+          on-response="apiStarWars"
+          last-response="{{response}}">
+        </iron-ajax>
+      </template>
+    </dom-module>
+    <script type="text/javascript">
+    // Para inicializar el componente
+      HTMLImports.whenReady(function(){
+          Polymer({
+            is: 'demo-element',
+            properties: {
+              response: {
+                type: Object
+              }
+            },
+            apiStarWars: function(e, request){
+              console.log(e.detail.response)
+            }
+          })
+      })
+    </script>
+  </body>
+</html>

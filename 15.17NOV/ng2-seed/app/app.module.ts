@@ -1,0 +1,14 @@
+/**
+ * Created by urielmiranda on 03/10/16.
+ */
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from '../app/app.component';
+import { HelloComponent } from '../app/hello.component';
+
+@NgModule({
+    imports: [ BrowserModule ],
+    declarations: [ AppComponent, HelloComponent ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }

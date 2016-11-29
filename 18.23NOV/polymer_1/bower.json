@@ -1,0 +1,24 @@
+{
+  "name": "polymerNekro",
+  "authors": [
+    "Aldo Marquez <aldo.619_@ciencias.unam.mx>"
+  ],
+  "description": "my polymer app",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "iron-ajax": "PolymerElements/iron-ajax#^1.4.3",
+    "paper-card": "PolymerElements/paper-card#^1.1.4",
+    "paper-item": "PolymerElements/paper-item#^1.2.1",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.1.7",
+    "paper-dialog": "PolymerElements/paper-dialog#^1.1.0"
+  }
+}
