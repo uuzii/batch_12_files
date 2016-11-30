@@ -1,0 +1,105 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-inpunt.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <h1>Registra tu evento</h1>
+
+      <form is="iron-form" method="get" action="https://eventosapi.herokuapp.com/api/v1/" id="basic">
+        <paper-dropdown-menu label="Selecciona tu startup" name="cars" required>
+          <paper-menu class="dropdown-content">
+            <paper-item value="volvo">Wayra</paper-item>
+            <paper-item value="saab">Startup 1</paper-item>
+            <paper-item value="fiat">Startup 2</paper-item>
+            <paper-item value="audi">Startup 3</paper-item>
+          </paper-menu>
+        </paper-dropdown-menu>
+        <br>
+        <h2>Fecha</h2>
+        <form action="">
+          <input type="datetime-local" name="" style="    position: relative;
+                                                          outline: none;
+                                                          box-shadow: none;
+                                                          padding: 0;
+                                                          background: transparent;
+                                                          border: none;
+                                                          color: #212121;
+                                                          -webkit-appearance: none;
+                                                          text-align: inherit;
+                                                          vertical-align: bottom;
+                                                          font-family: 'Roboto', 'Noto', sans-serif;
+                                                          -webkit-font-smoothing: antialiased;
+                                                          font-size: 16px;
+                                                          font-weight: 400;
+                                                          line-height: 24px;
+                                                          overflow: hidden;
+                                                          white-space: nowrap;
+                                                          text-overflow: ellipsis;
+                                                          box-sizing: border-box;
+                                                          cursor: pointer;">
+        </form>
+        <br>
+        <paper-input id="name" label="Descripción del evento" required></paper-input>
+        <br>
+        <paper-input name="name1" label="URL de imagen" required></paper-input>
+        <br>
+        <paper-input name="name2" label="URL de video" required></paper-input>
+        <br>
+        <paper-input name="name3" label="Mail del invitado" required></paper-input>
+        <br>
+        <br>
+        <paper-button raised onclick="_submit(event)">Submit</paper-button>
+        <paper-button raised onclick="_reset(event)">Reset</paper-button>
+        <div class="output"></div>
+      </form>
+
+      <script>
+        function _submit(event) {
+          Polymer.dom(event).localTarget.parentElement.submit();
+          var nombre = document.getElementById('name');
+          console.log(nombre.value);
+        }
+        function _reset(event) {
+          var form = Polymer.dom(event).localTarget.parentElement
+          form.reset();
+          form.querySelector('.output').innerHTML = '';
+        }
+        basic.addEventListener('iron-form-submit', function(event) {
+          this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+        });
+      </script>
+
+
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2'
+    });
+  </script>
+</dom-module>
